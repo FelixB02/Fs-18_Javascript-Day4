@@ -22,7 +22,10 @@ function deal2cards() {
     number1 += Math.floor(Math.random() * 19) + 3;
     document.getElementById("dice_1").innerHTML = `Dealer: ${number1}`
     if (number1 == 21) {
-        document.getElementById("winner").innerHTML = `The dealer has won the game!`
+        document.getElementById("winner").innerHTML = `The dealer has a blackjack!`
+        document.getElementById("reset").disabled = false;
+        document.getElementById("score2").disabled = true;
+        document.getElementById("stop").disabled = true;
     }
 }
 
@@ -30,11 +33,17 @@ function deal2cards() {
 function randomNumber2() {
     number2 += Math.floor(Math.random() * 11) + 2;
     document.getElementById("dice_2").innerHTML = `${lname.value}: ${number2}`
+    if (number2 == 21) {
+        document.getElementById("winner").innerHTML = `${lname_value} has a blackjack!`
+        document.getElementById("reset").disabled = false;
+        document.getElementById("score2").disabled = true;
+        document.getElementById("stop").disabled = true;
+    }
 
 
     if (number2 > 21) {
         document.getElementById("score2").disabled = true;
-        document.getElementById("winner").innerHTML = `${lname_value} has a Bust!`
+        document.getElementById("winner").innerHTML = `${lname_value} busts!`
         document.getElementById("reset").disabled = false;
     }
 
@@ -53,7 +62,11 @@ function stop() {
     if (number1 > 21) {
         document.getElementById("winner").innerHTML = `The dealer busts`
     } else {
-        if (number1 > number2) {
+        if (number1 == 21) {
+            document.getElementById("winner").innerHTML = "The dealer has a blackjack!"
+        } else if (number2 == 21) {
+            document.getElementById("winner").innerHTML = `${lname.value} has a blackjack!`
+        } else if (number1 > number2) {
             document.getElementById("winner").innerHTML = `The dealer has won the game!`
         } else if (number1 == number2) {
             document.getElementById("winner").innerHTML = "Its a draw!"
@@ -73,7 +86,9 @@ function playAgain() {
     number2 = 0;
     document.getElementById("reset").disabled = true;
     document.getElementById("score2").disabled = false;
+    document.getElementById("stop").disabled = false;
     deal2cards();
+
 
 }
 

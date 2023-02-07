@@ -69,9 +69,16 @@
 
 .margin {
     margin-left: 1vh;
+    width: 15vh;
+    height: 4vh;
 }
 
 #stop {
+    width: 15vh;
+    height: 4vh;
+}
+
+.size {
     width: 15vh;
     height: 4vh;
 }
