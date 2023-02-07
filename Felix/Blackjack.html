@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="Blackjack.css">
+</head>
+
+<body>
+    <div id="inputs">
+        <div>
+            <h3> Players Name</h3>
+            <input type="text" id="player2">
+        </div>
+        <div>
+            <h3> Press Button to save Data</h3>
+            <input type="submit" value="Submit Data" disabled id="btn" class="margin">
+            <input type="submit" value="Reset Values" id="sitereload" class="margin">
+        </div>
+    </div>
+
+    <div id="container-players">
+        <div class="player" id="p1">
+            <h2> Dealer </h2>
+            <h2 id="dice_1"></h2>
+        </div>
+        <div class="player" id="p2">
+            <h2 id="name2"> Player</h2>
+            <input type="submit" id="score2" disabled value="Deal Cards!">
+            <input type="submit" id="stop" disabled value="Stop!">
+            <h2 id="dice_2"></h2>
+        </div>
+    </div>
+
+    <div id="scores">
+        <h2 id="winner"> No winner has been declared!</h2>
+        <input type="submit" id="reset" disabled value="Play again?">
+    </div>
+
+    <script src="Blackjack.js">
+    </script>
+</body>
+
+</html>
