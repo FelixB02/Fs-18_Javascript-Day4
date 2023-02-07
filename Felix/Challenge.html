@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="Challenge.css">
+</head>
+
+<body>
+    <div id="inputs">
+        <div>
+            <h3> Player 1 Name</h3>
+            <input type="text" id="player1">
+        </div>
+        <div>
+            <h3> Player 2 Name</h3>
+            <input type="text" id="player2">
+        </div>
+        <div>
+            <h3> Press Button to save Data</h3>
+            <input type="submit" value="Submit Data" disabled id="btn">
+        </div>
+    </div>
+
+    <div id="container-players">
+        <div class="player" id="p1">
+            <h2 id="name1"> Player1 </h2>
+            <input type="submit" id="score1" disabled value="Roll Dice!">
+            <h2 id="dice_1"></h2>
+        </div>
+        <div class="player" id="p2">
+            <h2 id="name2"> Player2</h2>
+            <input type="submit" id="score2" disabled value="Roll Dice!">
+            <h2 id="dice_2"></h2>
+        </div>
+    </div>
+
+    <div id="scores">
+        <h2 id="winner"></h2>
+    </div>
+
+    <script src="Challenge.js">
+    </script>
+</body>
+
+</html>

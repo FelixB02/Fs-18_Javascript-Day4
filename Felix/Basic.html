@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" id="fname">
+    <input type="text" id="lname">
+    <input type="text" id="age">
+    <select name="cars" id="select">
+        <option value="it">IT</option>
+        <option value="hospitality">Hospitality</option>
+        <option value="programmer">Programmer</option>
+    </select>
+    <input type="submit" value="sumbit" id="btn">
+
+    <div id="cont">
+
+    </div>
+
+    <script>
+        function inputtoString() {
+            let fname = document.getElementById("fname").value;
+            let lname = document.getElementById("lname").value;
+            let age = document.getElementById("age").value;
+            let select = document.getElementById("select").value;
+            console.log(select)
+
+            let colors = "green";
+
+            if (Number(fname.length) <= 5) {
+                document.getElementById("cont").innerHTML = `<h3> My name is ${fname} ${lname} and i am ${age} years old. </h3>`
+                document.getElementById("cont").style.color = "green"
+            } else {
+                document.getElementById("cont").innerHTML = `<h3> My name is ${fname} ${lname} and i am ${age} years old. </h3>`
+                document.getElementById("cont").style.color = "red"
+            }
+
+            if (select == "it") {
+                document.getElementById("cont").style.background = "purple"
+            } else if (select == "hospitality") {
+                document.getElementById("cont").style.background = "yellow"
+            } else if (select == "programmer") {
+                document.getElementById("cont").style.background = "cornflowerblue"
+            }
+
+        }
+        document.getElementById("btn").addEventListener("click", inputtoString)
+    </script>
+</body>
+
+</html>
