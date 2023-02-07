@@ -4,6 +4,7 @@ let lname = document.getElementById("player2");
 let number1 = 0;
 let number2 = 0;
 
+deal2cards();
 
 
 function getValues() {
@@ -14,8 +15,6 @@ function getValues() {
     document.getElementById("stop").disabled = false;
     document.getElementById("btn").disabled = true;
 }
-
-deal2cards();
 
 
 function deal2cards() {
@@ -39,8 +38,6 @@ function randomNumber2() {
         document.getElementById("score2").disabled = true;
         document.getElementById("stop").disabled = true;
     }
-
-
     if (number2 > 21) {
         document.getElementById("score2").disabled = true;
         document.getElementById("winner").innerHTML = `${lname_value} busts!`
@@ -53,12 +50,10 @@ function randomNumber2() {
 function stop() {
     document.getElementById("reset").disabled = false;
     document.getElementById("score2").disabled = true;
-
     while (number1 <= 17) {
         number1 += Math.floor(Math.random() * 11) + 1;
         document.getElementById("dice_1").innerHTML = `Dealer: ${number1}`
     }
-
     if (number1 > 21) {
         document.getElementById("winner").innerHTML = `The dealer busts`
     } else {
@@ -74,14 +69,13 @@ function stop() {
             document.getElementById("winner").innerHTML = `${lname.value} has won the game!`
         }
     }
-
-
 }
 
 
 function playAgain() {
     document.getElementById("dice_1").innerHTML = "";
     document.getElementById("dice_2").innerHTML = "";
+    document.getElementById("winner").innerHTML = "No winner has been declared!";
     number1 = 0;
     number2 = 0;
     document.getElementById("reset").disabled = true;
@@ -91,6 +85,7 @@ function playAgain() {
 
 
 }
+
 
 function reloadsite() {
     location.reload();
